@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-        <CardProductVue v-for="(item,index) in items" :key="index" :url="item.url" :name="item.name" :price="item.price" :comments="item.comments" :measurement="item.measurement" :id="item._id"/>
+    <CardProductVue v-for="(item,index) in items" :key="index" :url="item.url" :name="item.name" :price="item.price" :comments="item.comments" :measurement="item.measurement" :id="item._id"/>
   </div>
 </template>
 

@@ -29,7 +29,9 @@ export default {
   },
   async mounted() {
     const token = await localStorage.getItem('token')
-    this.SetToken(token)
+    if(token){
+      this.SetToken(token)
+    }
   },
 }
 </script>
