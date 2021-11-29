@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 //ruta para registrarse en la tienda
 router.post('/signup',async (req,res)=>{
     const {email,password} = req.body;
-    
+
     const validation = await User.findOne({email})
 
     if(validation) return res.status(400).json({
@@ -15,10 +15,10 @@ router.post('/signup',async (req,res)=>{
     })
 
     const salt = await bcrypt.genSalt(5)
-    
+
     const passwordHash = await bcrypt.hash(password,salt);
     req.body.password = passwordHash
-    
+
     const user = await new User(req.body)
 
     const save = await user.save();
@@ -40,7 +40,7 @@ router.post('/acceso',async (req,res)=>{
     })
 
     try {
-        const verified = jwt.verify(token, process.env.TOKEN_SECRET);
+        const verified = jwt.verify(token, 'TOKEN_SECRET');
 
         res.json({
             data: verified
@@ -73,7 +73,7 @@ router.post('/login',async (req,res)=>{
         name: user.firstname,
         avatar: user.avatar,
         id: user._id
-    },process.env.TOKEN_SECRET)   
+    },'TOKEN_SECRET')
 
     res.header('auth-token',token).json({
         data: user.firstname,
