@@ -53,7 +53,7 @@ export default {
   methods: {
     async getShopping() {
       if(this.user){
-        const compras = await axios("http://localhost:5000/mis-compras", {
+        const compras = await axios("https://apimarketapp.herokuapp.com/mis-compras", {
           method: "POST",
           data: {
             id: this.user.id,

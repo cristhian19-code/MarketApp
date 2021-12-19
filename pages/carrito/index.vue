@@ -110,7 +110,7 @@ export default {
       //realizar la comprar y almacenar en la BD
       if (this.token) {
         try {
-          await axios("http://localhost:5000/compra", {
+          await axios("https://apimarketapp.herokuapp.com/compra", {
             method: "POST",
             data: {
               productos: this.carrito,

@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style>
-
+.vs-input{
+    width: 100% !important;
+}
 </style>

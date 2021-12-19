@@ -102,7 +102,7 @@ export default {
     },
     methods: {
       async Signup(){
-          axios('http://localhost:5000/signup',{
+          axios('https://apimarketapp.herokuapp.com/signup',{
             method: 'POST',
             data: this.register
           }).then(res => {
@@ -123,7 +123,7 @@ export default {
       },
       async Login(){
         try{
-          const res = await axios('http://localhost:5000/login',{
+          const res = await axios('https://apimarketapp.herokuapp.com/login',{
             method: 'POST',
             data: this.login
           })

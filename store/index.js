@@ -71,7 +71,7 @@ export const actions = {
     async SetToken({ commit }, token) {
 
         try {
-            const res = await axios('http://localhost:5000/acceso', {
+            const res = await axios('https://apimarketapp.herokuapp.com/acceso', {
                 method: 'POST',
                 headers: {
                     'auth-token': token

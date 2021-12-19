@@ -21,7 +21,7 @@ export default {
     async created(){
 
         //mandar peticion al store para reutilizar al enviar commentarios y se refresque los comentario con el cambio
-        const items = await axios('http://localhost:5000/allproducts',{
+        const items = await axios('https://apimarketapp.herokuapp.com/allproducts',{
             method: 'GET'
         })
         this.items = items.data.data
